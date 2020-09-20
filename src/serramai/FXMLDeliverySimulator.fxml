@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import java.net.URL?>
+<?import javafx.scene.image.*?>
+
+<BorderPane id="window" styleClass="border-pane" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="serramai.DeliverySimulatorController" prefWidth="900"
+            prefHeight="705" >
+    <stylesheets>
+        <URL value="@assets/fxmldeliverysimulator.css" />
+    </stylesheets>
+    
+    <fx:define>
+        <Insets fx:id="nodeMargins" top="5" right="5" bottom="5" left="5" />
+    </fx:define>
+    
+    <fx:define>
+        <Insets fx:id="nodeZero" top="0" right="0" bottom="0" left="0" />
+    </fx:define>
+    
+    <top>
+        <GridPane prefHeight="50" alignment="CENTER" id="top-pane" >
+            <Label fx:id="lblTitle" wrapText="true" 
+                   BorderPane.margin="$nodeMargins" prefHeight="30" 
+                   id="top-label" />
+        </GridPane>
+    </top>
+    
+    <center>
+        <GridPane vgap="0" BorderPane.margin="$nodeZero" >
+            <columnConstraints>
+                <ColumnConstraints percentWidth="50.0" hgrow="ALWAYS"/>
+                <ColumnConstraints percentWidth="50.0" hgrow="ALWAYS" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints percentHeight="100.0" vgrow="ALWAYS"/>
+            </rowConstraints>
+            <children>
+                <VBox spacing="30" id="left-vbox" GridPane.columnIndex="0" 
+                      GridPane.rowIndex="0">
+                    <GridPane vgap="30" id="vehicles" VBox.vgrow="ALWAYS" 
+                              prefHeight="400" >
+                       
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="100.0" 
+                                               hgrow="ALWAYS"/>
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints percentHeight="33.0" 
+                                            vgrow="ALWAYS" />
+                            <RowConstraints percentHeight="34.0"
+                                            vgrow="ALWAYS" />
+                            <RowConstraints percentHeight="33.0" 
+                                            vgrow="ALWAYS" />
+                        </rowConstraints>
+                        <HBox GridPane.columnIndex="0" GridPane.rowIndex="0" >
+                            <VBox HBox.hgrow="ALWAYS">     
+                                <Label fx:id="lblv1a" />
+                                <Label fx:id="lblv1b" />
+                                <Label fx:id="lblv1c" />    
+                            </VBox>
+
+                            <ImageView fx:id="iv1" fitWidth="190" 
+                                       preserveRatio="true" >
+                                <image>
+                                    <Image url="@assets/vehicle1.jpg" />
+                                </image>
+                            </ImageView>
+
+                        </HBox>
+                        <HBox spacing="5" GridPane.columnIndex="0" 
+                              GridPane.rowIndex="1" >
+                            <VBox HBox.hgrow="ALWAYS">     
+                                <Label fx:id="lblv2a" />
+                                <Label fx:id="lblv2b" />
+                                <Label fx:id="lblv2c" />    
+                            </VBox>
+
+                            <ImageView fx:id="iv2" fitWidth="190" 
+                                       preserveRatio="true" id="iv2" >
+                                <image>
+                                    <Image url="@assets/vehicle2.jpg" />
+                                </image>
+                            </ImageView>
+
+                        </HBox>
+                        <HBox GridPane.columnIndex="0" GridPane.rowIndex="2" >
+                            <VBox HBox.hgrow="ALWAYS">     
+                                <Label fx:id="lblv3a" />
+                                <Label fx:id="lblv3b" />
+                                <Label fx:id="lblv3c" />    
+                            </VBox>
+
+                            <ImageView fx:id="iv3" fitWidth="190"
+                                       preserveRatio="true" id="iv3" >
+                                <image>
+                                    <Image url="@assets/vehicle3.jpg" />
+                                </image>
+                            </ImageView>
+
+                        </HBox>
+                    </GridPane>
+                    <Button fx:id="btnDeliver" id="deliver" 
+                            text="Make a Delivery" maxHeight="Infinity" 
+                            maxWidth="Infinity" visible="false" 
+                            onAction="#deliverItems" />
+                    <Button fx:id="btnQuit" id="quit" text="QUIT" 
+                            maxHeight="Infinity" maxWidth="Infinity" 
+                            visible="false" onAction="#quit" />
+                </VBox>
+        
+                <VBox id="right-vbox" GridPane.columnIndex="1" 
+                      GridPane.rowIndex="0" alignment="CENTER" fx:id="vbox" >
+                    <Label id="error" fx:id="lblError" wrapText="true" />
+                    <Label text="Next item to Deliver:" id="next" 
+                           fx:id="lblNext" />
+                    <ImageView fx:id="iv4" fitWidth="400" fitHeight="300"
+                               preserveRatio="true" >
+                        <image>
+                            <Image url="@assets/alessiacara.png" />
+                        </image>
+                    </ImageView>
+                    <Label fx:id="lblItemTitle" id="item-title" />
+                    <Label fx:id="lblItemValue" id="item-value" />
+                    <VBox spacing="5" id="right-bottom-box" >
+                        <fx:define>
+                            <ToggleGroup fx:id="grpVehicle"/>
+                        </fx:define>
+                        <Label text="Deliver with Vehicle:" />
+                        <RadioButton toggleGroup="$grpVehicle" text="A" 
+                                     fx:id="optA" />
+                        <RadioButton toggleGroup="$grpVehicle" text="B" 
+                                     fx:id="optB" />
+                        <RadioButton id="cRB" toggleGroup="$grpVehicle" 
+                                     text="C" fx:id="optC" />
+                    
+                        <Button fx:id="btnLoad" id="load" maxHeight="Infinity" 
+                                maxWidth="Infinity" text="Load Items Now" 
+                                onAction="#loadItem" />
+                    </VBox>   
+                </VBox>
+            </children>
+        </GridPane>    
+    </center>
+   
+    <bottom>
+        <GridPane vgap="0" prefHeight="100" alignment="CENTER" 
+                  id="bottom-pane" >
+            <columnConstraints>
+                <ColumnConstraints percentWidth="100.0" hgrow="ALWAYS" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints percentHeight="100.0" vgrow="ALWAYS" />
+            </rowConstraints>
+            <TextArea fx:id="txtInfo" text="No deliveries have been as of yet." 
+                   wrapText="true" maxWidth="Infinity" 
+                    id="delivered-info" editable="false" 
+                      GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        </GridPane>
+    </bottom>
+</BorderPane>

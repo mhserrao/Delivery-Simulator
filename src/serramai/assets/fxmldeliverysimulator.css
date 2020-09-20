@@ -1,0 +1,142 @@
+/*
+ * Stylesheet for the CDCD GUI.
+ */
+.root{
+    -fx-font-family: verdana;
+    -fx-background-color: white;
+    -fx-font-size: 15;
+}
+
+#top-label{
+    -fx-alignment:CENTER;
+    -fx-font-style: italic;
+    -fx-font-weight: bold;
+}
+
+#window{
+    -fx-border-color: black;
+    -fx-padding: 0 0 0 0;
+    -fx-alignment: CENTER;
+}
+
+#left-vbox{
+    -fx-padding: 20 20 20 20;
+    -fx-background-color: lavender;
+}
+
+#right-vbox{
+    -fx-padding: 10 20 10 20;
+    -fx-border-width: 1 0 0 0;
+    -fx-border-color: white;
+}
+
+#load {
+    -fx-padding: 10 10 10 10;
+    -fx-font-size: 18;
+    -fx-text-fill: #333333;
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color:black;
+    -fx-background-color:#ffe699;
+}
+
+#load:hover {
+    -fx-background-color: #ffcc33;
+    -fx-text-fill: black;
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: black;
+}
+
+#deliver {
+    -fx-padding: 10 10 10 10;
+    -fx-font-size: 18;
+    -fx-background-color: #ffe699;
+    -fx-text-fill: red;
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: black;
+}
+
+#deliver:hover{
+   -fx-background-color: #ffcc33;
+    -fx-text-fill: black;
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: black;
+}
+
+#right-bottom-box{
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10 10 10 10;
+    -fx-background-color: lavender;
+    -fx-border-color: black;
+    -fx-border-width: 1 1 1 1;
+}
+
+.radio-button{
+    -fx-padding: 0 10 0 40;
+}
+
+#cRB{
+    -fx-padding: 0 10 15 40;
+}
+
+#top-pane {
+    -fx-border-color: black;
+    -fx-border-width: 0 0 2 0;
+}
+
+#bottom-pane{
+    -fx-border-color: black;
+    -fx-border-width: 1 0 0 0;
+    -fx-padding: 0 1 0 0;
+}
+
+#vehicles {
+    -fx-border-color:black;
+    -fx-border-width: 1 1 1 1;
+    -fx-background-color: white;
+    -fx-padding: 5 5 5 5;
+}
+
+#item-value {
+    -fx-padding: 0 0 10 0;
+}
+
+#item-title{
+    -fx-padding: 10 0 0 0;
+}
+
+#next {
+    -fx-padding: 0 0 10 0;
+}
+
+#delivered-info {
+    -fx-font-style: italic;
+    -fx-border-width: 1 0 1 0;
+    -fx-border-color: black;
+    -fx-background-color: white;
+}
+
+#quit {
+    -fx-padding: 10 10 10 10;
+    -fx-font-size: 18;
+    -fx-background-color: #ffe699;
+    -fx-text-fill: red;
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: black;
+}
+
+#quit:hover{
+    -fx-background-color: #ffcc33;
+    -fx-text-fill: black;
+    -fx-border-width: 1 1 1 1;
+    -fx-border-color: black;
+}
+
+#error {
+    -fx-text-fill: red;
+    -fx-font-style: italic;
+    -fx-font-size: 15;
+    -fx-padding: 0 0 10 0;
+}
+
+
+
